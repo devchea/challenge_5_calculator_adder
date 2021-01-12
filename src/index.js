@@ -5,7 +5,9 @@ import "./styles.css";
 
 function App() {
   const [firstNum, setFirstNum] = useState(0);
-  console.log(firstNum);
+  const [secondNum, setSecondNum] = useState(0);
+  console.log("first:", firstNum);
+  console.log("sec:", secondNum);
 
   return (
     <div className="App">
@@ -17,7 +19,11 @@ function App() {
           placeholder="0"
           onChange={(e) => setFirstNum(e.target.value)}
         />
-        <input type="number" placeholder="0" />
+        <input
+          type="number"
+          placeholder="0"
+          onChange={(e) => setSecondNum(e.target.value)}
+        />
       </div>
 
       <button>+</button>
