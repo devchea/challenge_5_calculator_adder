@@ -6,6 +6,8 @@ import "./styles.css";
 function App() {
   const [firstNum, setFirstNum] = useState(0);
   const [secondNum, setSecondNum] = useState(0);
+  const [total, setTotal] = useState(0);
+
   console.log("first:", firstNum);
   console.log("sec:", secondNum);
 
@@ -26,12 +28,38 @@ function App() {
         />
       </div>
 
-      <button>+</button>
-      <button>-</button>
-      <button>x</button>
-      <button>/</button>
+      <button
+        onClick={() =>
+          setTotal(parseInt(firstNum, 10) + parseInt(secondNum, 10))
+        }
+      >
+        +
+      </button>
+      <button
+        onClick={() =>
+          setTotal(parseInt(firstNum, 10) - parseInt(secondNum, 10))
+        }
+      >
+        -
+      </button>
+      <button
+        onClick={() =>
+          setTotal(parseInt(firstNum, 10) * parseInt(secondNum, 10))
+        }
+      >
+        x
+      </button>
+      <button
+        onClick={() =>
+          setTotal(
+            (parseInt(firstNum, 10) / parseInt(secondNum, 10)).toFixed(3)
+          )
+        }
+      >
+        /
+      </button>
 
-      <h2>0</h2>
+      <h2>{total}</h2>
 
       <ScotchInfoBar seriesNumber={5} />
     </div>
